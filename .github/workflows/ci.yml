@@ -1,0 +1,29 @@
+name: CI - Tests Automáticos
+
+on:
+  push:
+    branches: [ Alvarez ] 
+  pull_request:
+    branches: [ Alvarez ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+    
+    - name: Configurar Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Instalar dependencias
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Ejecutar tests
+      run: |
+        python -m unittest test.py -v
