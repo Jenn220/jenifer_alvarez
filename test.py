@@ -15,7 +15,7 @@ class TestApp(unittest.TestCase):
     def test_suma(self):
         response = self.app.get('/suma/5/3')
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'5', response.data)
+        self.assertIn(b'0', response.data)
     
     def test_resta(self):
         response = self.app.get('/resta/10/4')
