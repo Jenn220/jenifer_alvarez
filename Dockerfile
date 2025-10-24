@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # Ejecutar
-CMD ["python", "app.py"]
+CMD ["python", "aplicacion.py"]
