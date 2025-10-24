@@ -1,5 +1,5 @@
 import unittest
-from aplicacion import aplicacion
+from aplicacion import app  
 
 class TestApp(unittest.TestCase):
     
@@ -29,4 +29,3 @@ class TestApp(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
