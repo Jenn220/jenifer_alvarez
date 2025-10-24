@@ -1,4 +1,4 @@
-# app.py
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -12,13 +12,17 @@ def home():
     <a href="/resta/10/4">Probar resta: 10 - 4</a>
     '''
 
-@app.route('/suma/<int:a>/<int:b>')
+@app.route('/suma/<path:a>/<path:b>')
 def sumar(a, b):
+    a = int(a)
+    b = int(b)
     resultado = a + b
     return f'<h2>Resultado de {a} + {b} = {resultado}</h2>'
 
-@app.route('/resta/<int:a>/<int:b>')
+@app.route('/resta/<path:a>/<path:b>')
 def restar(a, b):
+    a = int(a)
+    b = int(b)
     resultado = a - b
     return f'<h2>Resultado de {a} - {b} = {resultado}</h2>'
 
